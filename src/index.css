@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #413441;
+    color: #bebabf;
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Accessibility: Focus rings */
+  :focus-visible {
+    outline: 2px solid #eaeafb;
+    outline-offset: 2px;
+  }
+}
+
+/* Crisp developer surfaces matching palette */
+.panel-card {
+  background-color: #382c38;
+  border: 1px solid #544354;
+}
+
+.panel-card:hover {
+  border-color: #725c72;
+}
+
+/* Subtle architectural grid lines */
+.tech-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(253, 242, 242, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(253, 242, 242, 0.035) 1px, transparent 1px);
+}
+
+/* Navbar backdrop */
+.nav-backdrop {
+  background-color: rgba(65, 52, 65, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid #544354;
+}
+
+/* Palette custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #413441;
+}
+::-webkit-scrollbar-thumb {
+  background: #544354;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #725c72;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
